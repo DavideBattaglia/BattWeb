@@ -1,0 +1,84 @@
+@font-face {
+  font-family: "ITC Eras Std Bold";
+  src: url("https://db.onlinewebfonts.com/t/0f43b913cf9c2982da67caed1f456f4c.eot");
+  src: url("https://db.onlinewebfonts.com/t/0f43b913cf9c2982da67caed1f456f4c.eot?#iefix")format("embedded-opentype"),
+  url("https://db.onlinewebfonts.com/t/0f43b913cf9c2982da67caed1f456f4c.woff2")format("woff2"),
+  url("https://db.onlinewebfonts.com/t/0f43b913cf9c2982da67caed1f456f4c.woff")format("woff"),
+  url("https://db.onlinewebfonts.com/t/0f43b913cf9c2982da67caed1f456f4c.ttf")format("truetype"),
+  url("https://db.onlinewebfonts.com/t/0f43b913cf9c2982da67caed1f456f4c.svg#ITC Eras Std Bold")format("svg");
+}
+body {
+  margin: 0;
+  font-family: 'ITC Eras Std Bold', sans-serif;
+}
+html,
+body {
+  height: 100%;
+	overflow: hidden;
+}
+canvas {
+  display: block;
+}
+
+.logo {
+  position:absolute;
+  bottom:16px;
+  right:16px;
+  width:32px;
+  height:32px;
+  z-index:2;
+  background-image:url(https://app.spline.design/_assets/_icons/icon_favicon32x32.png);
+  background-size:cover;
+}
+.logo:hover {
+  opacity:0.8;
+}
+/* Stile per la barra di caricamento */
+#loading-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#loading-bar div {
+  width: 50%;
+  height: 4px;
+  background: #000;
+  animation: loading 2s infinite;
+}
+@keyframes loading {
+  0% { width: 0%; }
+  10% { width: 50%; }
+  20% { width: 60%; }
+  30% { width: 65%; }
+  40% { width: 70%; }
+  50% { width: 75%; }
+  60% { width: 80%; }
+  70% { width: 85%; }
+  80% { width: 90%; }
+  90% { width: 95%; }
+  100% { width: 0%; }
+}
+#loading-bar {
+  /* ... */
+  flex-direction: column; /* Aggiungi questa linea per allineare i figli verticalmente */
+}
+#loading-bar img {
+  width: 300px;
+  height: auto;
+  margin-bottom: 20px; /* Aggiungi un po' di spazio tra il logo e la barra di caricamento */
+}
+#loading-bar p {
+  margin-top: 20px; /* Aggiungi un po' di spazio tra la barra di caricamento e il testo */
+}
+/*font-style: oblique;  inclina il testo font-family: 'ITC Eras Std Bold';*/
+
+h1 {
+  font-style: oblique;
+}
+

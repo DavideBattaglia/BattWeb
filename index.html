@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/styles.css" />
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
+    <style>
+     
+    </style>
+  </head>
+  <body>
+    <!-- Barra di caricamento -->
+    <div id="loading-bar">
+      <img src="img/unnamed.png" alt="Logo">
+      <div></div>
+      
+      <h1>loading...</h1>
+
+
+
+    </div>
+    <canvas id="canvas3d"></canvas>
+    <!-- Import maps polyfill -->
+    <!-- Remove this when import maps will be widely supported -->
+    <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "@splinetool/runtime": "https://unpkg.com/@splinetool/runtime@1.0.54/build/runtime.js"
+        }
+      }
+    </script>
+    <script type="module" src="./src/main.js"></script>
+    <script>
+      window.addEventListener('load', function() {
+        // Nascondi la barra di caricamento quando la pagina è completamente caricata
+        document.getElementById('loading-bar').style.display = 'none';
+      });
+    </script>
+  </body>
+</html>
