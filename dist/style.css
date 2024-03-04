@@ -1,0 +1,219 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "ITC Eras Std Bold";
+  src: url("https://db.onlinewebfonts.com/t/0f43b913cf9c2982da67caed1f456f4c.eot");
+  src: url("https://db.onlinewebfonts.com/t/0f43b913cf9c2982da67caed1f456f4c.eot?#iefix")format("embedded-opentype"),
+  url("https://db.onlinewebfonts.com/t/0f43b913cf9c2982da67caed1f456f4c.woff2")format("woff2"),
+  url("https://db.onlinewebfonts.com/t/0f43b913cf9c2982da67caed1f456f4c.woff")format("woff"),
+  url("https://db.onlinewebfonts.com/t/0f43b913cf9c2982da67caed1f456f4c.ttf")format("truetype"),
+  url("https://db.onlinewebfonts.com/t/0f43b913cf9c2982da67caed1f456f4c.svg#ITC Eras Std Bold")format("svg");
+}
+
+body, html {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  overflow: hidden;
+  background: #f1f2f6;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+#lo {
+  fill: #8395a7;
+  filter: drop-shadow(10px 10px 10px 10px rgba(136, 165, 191, 0.1));
+  cursor: pointer;
+}
+
+.cir {
+  position: absolute;
+  top: 10%;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  box-shadow: 10px 10px 10px 10px rgba(136, 165, 191, 0.1) inset, inset -10px -10px 10px #FFFFFF;
+}
+
+.cir1 {
+  position: absolute;
+  top: 22%;
+}
+
+.cir2 {
+  position: absolute;
+  top: 80%;
+  z-index: 2;
+  display: inline;
+}
+
+.cir3 {
+  position: absolute;
+  top: 65%;
+  z-index: 2;
+  display: inline;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.cir4 {
+  position: absolute;
+  top: 95%;
+  z-index: 2;
+  display: inline;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+section.light,
+section.dark {
+	display: flex;
+	width: 50vw;
+	height: 100vh;
+	align-items: center;
+	justify-content: space-around;
+}
+section.light {
+	background-color: #e0e5ec;
+}
+section.dark {
+	background-color: #131419;
+}
+div.circle,
+div.circle_black {
+	position: relative;
+	display: flex;
+	width: 150px;
+	height: 150px;
+	border-radius: 150px;
+	align-items: center;
+	justify-content: center;
+}
+div.circle:before,
+div.circle_black:before {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: block;
+	width: 150px;
+	height: 150px;
+	content: " ";
+	cursor: pointer;
+	transition: 0.3s ease-out;
+	border-radius: 150px;
+	filter: blur(7px);
+}
+div.circle.long,
+div.circle_black.long {
+	width: 250px;
+	height: 100px;
+}
+div.circle.long:before,
+div.circle_black.long:before {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 250px;
+	height: 100px;
+}
+div.circle:before {
+	box-shadow: 8px 8px 20px #a9a8b7, -8px -8px 20px #fff;
+}
+div.circle_black:before {
+	box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5),
+		-8px -8px 20px rgba(255, 255, 255, 0.2);
+}
+div.circle:hover:before {
+	box-shadow: 8px 8px 20px #a9a8b7, -8px -8px 20px #fff,
+		inset -8px -8px 20px #fff, inset 8px 8px 20px #a9a8b7;
+}
+div.circle_black:hover:before {
+	box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5),
+		-8px -8px 20px rgba(255, 255, 255, 0.2), inset 8px 8px 20px rgba(0, 0, 0, 1),
+		inset -8px -8px 20px rgba(255, 255, 255, 0.2);
+}
+div.circle:hover:before,
+div.circle_black:hover:before {
+	transition: 0.3s ease-in;
+	transform: scale(1.05);
+}
+div.circle p,
+div.circle_black p {
+	position: relative;
+	z-index: 5;
+	user-select: none;
+	cursor: pointer;
+}
+div.circle_black {
+	color: white;
+}
+@media (max-width: 700px) {
+	body {
+		height: auto;
+		flex-direction: column;
+	}
+	section.light,
+	section.dark {
+		width: 100vw;
+		height: 100vh;
+	}
+}
+
+
+
+p {
+  font-family: "ITC Eras Std Bold", serif; /* Specify font family and include a fallback option */
+  font-size: 2em;  /* Increase font size to be large */
+  /* Add other styles as needed, such as: */
+  /* color: #333; */  /* Set text color */
+  /* line-height: 1.5; */ /* Adjust line height */
+}
+
+.special-div {
+  z-index: 10;
+  /* Add other styles for the special divs */
+}
+
+
