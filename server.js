@@ -25,6 +25,11 @@ app.get('/', (req, res) => {
   }
 });
 
+app.get('/ciao', (req, res) => {
+  // Restituisce il file index
+  res.sendFile(path.join(__dirname, './dist/index.html'));
+});
+
 app.listen(port, () => {
   console.log(`Server avviato su http://localhost:${port}`);
 });
