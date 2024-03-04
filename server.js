@@ -17,9 +17,11 @@ app.get('/', (req, res) => {
   if (ua.isMobile) {
     // Restituisci il file index per dispositivi mobili
     res.sendFile(path.join(__dirname, './dist/index.html'));
+    console.log("mobile");
   } else {
     // Restituisci il file index per PC
     res.sendFile(path.join(__dirname, 'index.html'));
+    console.log("pc");
   }
 });
 
