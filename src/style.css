@@ -20,6 +20,11 @@ body, html {
   display: flex;
   overflow: hidden;
   background: #f1f2f6;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .container {
