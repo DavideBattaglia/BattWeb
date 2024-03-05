@@ -14,13 +14,13 @@ app.get('/', (req, res) => {
 
   if (clientOs.includes('Windows NT')) {
     indexFile = 'index2.html';
-  } else if (clientOs.includes('Linux')) {
-    indexFile = 'index2.html';
   } else if (/iPhone|iPad|iPod/i.test(clientOs)) {
     indexFile = 'index1.html';
   } else if (/Android/i.test(clientOs)) {
     indexFile = 'index1.html';
   } else if (clientOs.includes('Mac OS X')) {
+    indexFile = 'index2.html';
+  } else if (clientOs.includes('Linux')) {
     indexFile = 'index2.html';
   } else {
        console.log('DEFAULT\n'); 
