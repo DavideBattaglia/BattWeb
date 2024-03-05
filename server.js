@@ -17,17 +17,17 @@ app.get('/', (req, res) => {
   // Stampa il tipo di casa scelto
   console.log(`Sistema Operartivo: ${clientOs}`);
   // Seleziona l'index in base al sistema operativo
-  /*
+ 
   let indexFile;
   switch (clientOs) {
     case 'win32':
-      indexFile = 'index.html';
+      indexFile = 'index2.html';
       break;
     case 'linux':
-      indexFile = 'index.html';
+      indexFile = 'index2.html';
       break;
     case 'darwin':
-      indexFile = 'index.html';
+      indexFile = 'index2.html';
       break;
     case 'ios':
       indexFile = 'index1.html';
@@ -36,16 +36,12 @@ app.get('/', (req, res) => {
       indexFile = 'index1.html';
       break;
     default:
-      indexFile = 'index.html';
+      indexFile = 'index2.html';
     break;
   }
-  if (err) {
-    console.error(err); // Log any errors in sending the file
-  } else {
-    console.log(`Sent index file: ${indexFile}`);
-  }
+
   // Invia l'index appropriato
-  res.sendFile(indexFile, { root: __dirname });*/
+  res.sendFile(indexFile, { root: __dirname });
 });
 
 app.get('/ciao', (req, res) => {
