@@ -1,63 +1,44 @@
 const express = require('express');
-const app = express();
 const path = require('path');
-const userAgent = require('express-useragent');
-const port = 3000;
-const os = require('os');
-const uaParser = require('ua-parser-js');
+
+const app = express();
+const port = process.env.PORT || 3000; // Usa la variabile d'ambiente PORT o la porta 3000 come predefinita
 
 app.use(express.static(__dirname));
 
-// Middleware per l'analisi dell'user agent
-app.use(userAgent.express());
 
 app.get('/', (req, res) => {
-  // Ottieni il sistema operativo del client
-  const clientOs = os.platform();
-  // Stampa il tipo di casa scelto
-  console.log(`Sistema Operartivo: ${clientOs}`);
-  // Seleziona l'index in base al sistema operativo
- 
+  const clientOs = req.headers['user-agent'];
+
   let indexFile;
-  switch (clientOs) {
-    case 'win32':
-      indexFile = 'index2.html';
-      break;
-    case 'linux':
-      indexFile = 'index2.html';
-      break;
-    case 'darwin':
-      indexFile = 'index2.html';
-      break;
-    case 'ios':
-      indexFile = 'index1.html';
-      break;
-    case 'android':
-      indexFile = 'index1.html';
-      break;
-    default:
-      indexFile = 'index2.html';
-    break;
+
+  if (clientOs.includes('Windows NT')) {
+    indexFile = 'index2.html';
+  } else if (clientOs.includes('Linux')) {
+    indexFile = 'index2.html';
+  } else if (/iPhone|iPad|iPod/i.test(clientOs)) {
+    indexFile = 'index1.html';
+  } else if (/Android/i.test(clientOs)) {
+    indexFile = 'index1.html';
+  } else if (clientOs.includes('Mac OS X')) {
+    indexFile = 'index2.html';
+  } else {
+       console.log('DEFAULT\n'); 
+    indexFile = 'index2.html';
+
   }
 
-  // Invia l'index appropriato
-  res.sendFile(indexFile, { root: __dirname });
+  console.log(`Sistema operativo rilevato: ${clientOs}`);
+
+  //res.sendFile(path.join(__dirname, indexFile), (err) => {
+    res.sendFile(indexFile, { root: __dirname });
+    /*if (err) {
+      console.error(err);
+      res.status(500).send('Internal Server Error');
+    }
+  });*/
 });
-
-app.get('/ciao', (req, res) => {
-  // Restituisce il file index
-  res.sendFile(path.join(__dirname, 'index1.html'));
-});
-
-app.get('/test', (req, res) => {
-  // Ottieni informazioni sul sistema operativo del client
-  const clientOs = os.platform();
-
-  // Restituisci una risposta con il sistema operativo del client
-  console.log(`Il tuo sistema operativo è: ${clientOs}`);
-});
-
 
 app.listen(port, () => {
-  console.log(`Server avviato su http://localhost:${port}`);
+  console.log(`Server in ascolto sulla porta ${port}`);
 });
