@@ -4,6 +4,7 @@ const path = require('path');
 const userAgent = require('express-useragent');
 const port = 3000;
 const os = require('os');
+const uaParser = require('ua-parser-js');
 
 app.use(express.static(__dirname));
 
@@ -13,8 +14,10 @@ app.use(userAgent.express());
 app.get('/', (req, res) => {
   // Ottieni il sistema operativo del client
   const clientOs = os.platform();
-
+  // Stampa il tipo di casa scelto
+  console.log(`Sistema Operartivo: ${clientOs}`);
   // Seleziona l'index in base al sistema operativo
+  /*
   let indexFile;
   switch (clientOs) {
     case 'win32':
@@ -34,11 +37,15 @@ app.get('/', (req, res) => {
       break;
     default:
       indexFile = 'index.html';
+    break;
   }
-  // Stampa il tipo di casa scelto
-  console.log(`Sistema Operartivo: ${clientOs}`);
+  if (err) {
+    console.error(err); // Log any errors in sending the file
+  } else {
+    console.log(`Sent index file: ${indexFile}`);
+  }
   // Invia l'index appropriato
-  res.sendFile(indexFile, { root: __dirname });
+  res.sendFile(indexFile, { root: __dirname });*/
 });
 
 app.get('/ciao', (req, res) => {
