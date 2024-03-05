@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "a": "^3.0.1",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "express-useragent": "^1.0.15"
   },
   "main": "server.js",
   "author": "",
